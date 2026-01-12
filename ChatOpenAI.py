@@ -40,7 +40,7 @@ class ChatOpenAI():
                 for toolCallChunk in delta.tool_calls:
                     #第一次收到toolCall
                     if(len(toolCalls) <= toolCallChunk.index):
-                        toolCalls.append({id:"",function:{"name":"", "arguments": ""}})
+                        toolCalls.append({"id":"","function":{"name":"", "arguments": ""}})
                     currentCall = toolCalls[toolCallChunk.index]
 
                     if(toolCallChunk.id):
